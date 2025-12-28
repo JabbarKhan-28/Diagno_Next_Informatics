@@ -31,7 +31,7 @@ export default function HomeScreen() {
               <Video
                 source={require('../assets/images/background.mp4')}
                 style={{ width: '100%', height: '100%' }}
-                resizeMode={ResizeMode.CONTAIN}
+                resizeMode={ResizeMode.COVER}
                 shouldPlay
                 isLooping
                 isMuted
