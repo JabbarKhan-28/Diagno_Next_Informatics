@@ -3,8 +3,8 @@ import React, { useEffect } from 'react';
 import { Platform, ScrollView, StyleSheet, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+import { ResizeMode, Video } from 'expo-av';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useVideoPlayer, VideoView } from 'expo-video';
 
 import { useRouter } from 'expo-router';
 import NavBar from '../components/NavBar';
@@ -16,20 +16,10 @@ export default function HomeScreen() {
   const { width } = useWindowDimensions();
   const isMobile = width < 768;
 
-  const player = useVideoPlayer(require('../assets/images/background.mp4'), player => {
-    player.loop = true;
-    player.muted = true;
-    player.play();
-  });
-
+  const [mounted, setMounted] = React.useState(false);
   useEffect(() => {
-    if (player) {
-        player.loop = true;
-        player.muted = true;
-        player.play();
-     
-    }
-  }, [player]);
+    setMounted(true);
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -37,12 +27,16 @@ export default function HomeScreen() {
       
       {/* Background Container */}
       <View style={styles.backgroundContainer}>
-          <VideoView
-            player={player}
-            style={{ width: '100%', height: '100%' }}
-            contentFit="cover"
-            nativeControls={false}
-          />
+          {mounted && (
+              <Video
+                source={require('../assets/images/background.mp4')}
+                style={{ width: '100%', height: '100%' }}
+                resizeMode={ResizeMode.CONTAIN}
+                shouldPlay
+                isLooping
+                isMuted
+              />
+          )}
           <View style={styles.overlay} />
           
           {/* DNA Strand Decoration (Simulated with simple shapes or gradient - optional, but helps match look) */}
