@@ -1,5 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
-import { Analytics } from '@vercel/analytics/react';
+
 import { Stack, usePathname, useRouter } from 'expo-router';
 import React, { useMemo } from 'react';
 import { Platform, StyleSheet, TouchableOpacity, View } from 'react-native';
@@ -100,7 +100,6 @@ export default function RootLayout() {
     <>
       <Stack screenOptions={{ headerShown: false }} />
       <NavigationControls />
-      {Platform.OS === 'web' && <Analytics />}
     </>
   );
 }
