@@ -1,8 +1,9 @@
 import { Ionicons } from '@expo/vector-icons';
 
 import { Stack, usePathname, useRouter } from 'expo-router';
-import React, { useMemo } from 'react';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import React, { useEffect, useMemo } from 'react';
+import { Platform, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { initializeSpeedInsights } from '../lib/speed-insights';
 
 const SERVICES = [
   '/services/lis',
@@ -39,6 +40,13 @@ const ORDERED_ROUTES = [
 export default function RootLayout() {
   const pathname = usePathname();
   const router = useRouter();
+
+  // Initialize Speed Insights on web platform
+  useEffect(() => {
+    if (Platform.OS === 'web') {
+      initializeSpeedInsights();
+    }
+  }, []);
 
   const currentIndex = useMemo(() => {
     return ORDERED_ROUTES.indexOf(pathname);
