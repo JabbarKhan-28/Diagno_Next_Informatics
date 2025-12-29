@@ -288,16 +288,16 @@ const styles = StyleSheet.create({
         borderRadius: 20,
     },
     activeNavLinkContainer: {
-        backgroundColor: '#004a99',
+        backgroundColor: '#007BFF',
     },
     activeNavLinkText: {
         color: '#ffffff',
     },
     navLink: {
-        color: '#004a99', 
+        color: '#031224', 
         fontWeight: Platform.OS === 'android' ? '700' : '600',
         fontSize: 15,
-        fontFamily: Platform.select({ ios: 'Arial', android: 'sans-serif-medium', web: 'sans-serif' }),
+        fontFamily: Platform.select({ ios: 'System', android: 'sans-serif-medium', web: 'Inter, sans-serif' }),
         letterSpacing: Platform.OS === 'android' ? 0.3 : 0,
     },
     dropdownLink: {

@@ -1,50 +1,99 @@
-# Welcome to your Expo app 👋
+# Diagno Next Informatics
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Diagno Next Informatics is a premium digital health and clinical laboratory informatics platform. It is designed to revolutionize healthcare by empowering clinical labs with data intelligence, digital workflows, and seamless informatics integration.
 
-## Get started
+## 🚀 Features
 
-1. Install dependencies
+- **Responsive Design**: Optimized for different platforms with distinct templates for Web and Android.
+- **Premium Web Experience**: High-end glassmorphic UI with dynamic lighting effects and smooth animations.
+- **Native Android Experience**: A cohesive, clean, and high-performance interface tailored for mobile diagnostics.
+- **Multimedia Integration**: High-definition video backgrounds and interactive informatics modules.
+- **Advanced Navigation**: Multi-level dropdowns for Services & Solutions and Expertise categories.
+- **Interactive UI**: Staggered entry animations powered by `react-native-reanimated`.
 
+## 🛠 Tech Stack
+
+- **Framework**: [Expo](https://expo.dev) / [React Native](https://reactnative.dev)
+- **Routing**: [Expo Router](https://docs.expo.dev/router/introduction/) (File-based)
+- **Animations**: [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)
+- **Visuals**: [Expo Blur](https://docs.expo.dev/versions/latest/sdk/blur-view/), [Expo Image](https://docs.expo.dev/versions/latest/sdk/image/), [Expo AV](https://docs.expo.dev/versions/latest/sdk/av/)
+- **Styling**: Platform-specific styling with Native StyleSheet.
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (LTS version)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [Expo Go](https://expo.dev/go) app (for testing on physical mobile devices)
+
+### Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   cd Diagno_Next_Informatics
+   ```
+
+2. **Install dependencies**:
    ```bash
    npm install
    ```
 
-2. Start the app
-
+3. **Install platform-specific modules (if needed)**:
    ```bash
-   npx expo start
+   npx expo install expo-blur expo-av expo-image expo-linear-gradient react-native-reanimated
    ```
 
-In the output, you'll find options to open the app in a
+## 🏃 Running the App
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+### Start the development server
 ```bash
-npm run reset-project
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Run on Web
+Press `w` in the terminal or use:
+```bash
+npm run web
+```
 
-## Learn more
+### Run on iOS
+> **Note**: Developing locally for the iOS Simulator requires **macOS and Xcode**. 
 
-To learn more about developing your project with Expo, look at the following resources:
+**If you are on Windows/Linux**, you can still test on an iOS device:
+1. Install the **Expo Go** app from the App Store on your iPhone/iPad.
+2. Ensure your computer and iOS device are on the same Wi-Fi network.
+3. Start the server with `npx expo start`.
+4. Scan the **QR code** displayed in your terminal using the iOS Camera app or the Expo Go app.
+5. Alternatively, press `s` in the terminal to sign into your Expo account to see the project listed in the Expo Go app.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Run on Android
+Press `a` in the terminal or use:
+```bash
+npm run android
+```
+(Requires Android Studio and an emulator or a physical device connected via USB/Wi-Fi).
 
-## Join the community
+### Clear Cache (Fix for dependency issues)
+If you encounter module resolution errors (e.g., `expo-blur` not found), restart with a cleared cache:
+```bash
+npx expo start -c
+```
 
-Join our community of developers creating universal apps.
+## 🏗 Building for Production
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### Web Build
+To export the project for web hosting (e.g., Firebase, Vercel):
+```bash
+npm run build
+```
+The output will be in the `dist` directory.
+
+## 🤝 Contact
+For any inquiries regarding Informatics Solutions, contact:
+**Diagno Next Informatics**
+[contact@diagnonext.com] (Example)
+
+---
+*Every Day, A New Discovery.*
