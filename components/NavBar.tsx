@@ -323,10 +323,17 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         backgroundColor: 'rgba(255,255,255,0.95)', // Slightly transparent nav bar
         borderRadius: 30, // Keep rounded look but distinct
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 5,
+        ...Platform.select({
+            web: {
+                boxShadow: '0px 2px 5px rgba(0,0,0,0.1)',
+            },
+            default: {
+                shadowColor: "#000",
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.1,
+                shadowRadius: 5,
+            }
+        }),
         elevation: 5,
     },
     logoMobile: {
@@ -395,10 +402,17 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         paddingVertical: 5,
         width: 350, // Wider for long text
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 5 },
-        shadowOpacity: 0.3,
-        shadowRadius: 10,
+        ...Platform.select({
+            web: {
+                boxShadow: '0px 5px 10px rgba(0,0,0,0.3)',
+            },
+            default: {
+                shadowColor: "#000",
+                shadowOffset: { width: 0, height: 5 },
+                shadowOpacity: 0.3,
+                shadowRadius: 10,
+            }
+        }),
         elevation: 10,
         zIndex: 1000,
     },

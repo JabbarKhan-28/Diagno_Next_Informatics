@@ -26,12 +26,13 @@ export default function HomeScreen() {
       <StatusBar style="light" />
       
       {/* Background Container */}
-      <View style={styles.backgroundContainer}>
+      <View style={[styles.backgroundContainer, { backgroundColor: '#000814' }]}>
           {mounted && (
               <Video
+                key="bg-video-contain"
                 source={require('../assets/images/background.mp4')}
-                style={{ width: '100%', height: '100%' }}
-                resizeMode={ResizeMode.COVER}
+                style={StyleSheet.absoluteFillObject}
+                resizeMode={ResizeMode.CONTAIN}
                 shouldPlay
                 isLooping
                 isMuted

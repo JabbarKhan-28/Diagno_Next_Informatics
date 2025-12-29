@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import React, { useEffect, useRef } from 'react';
-import { Animated, Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Animated, Modal, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 interface StyledAlertProps {
     visible: boolean;
@@ -98,10 +98,17 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
         position: 'relative',
         overflow: 'hidden',
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 10 },
-        shadowOpacity: 0.25,
-        shadowRadius: 10,
+        ...Platform.select({
+            web: {
+                boxShadow: '0px 10px 10px rgba(0,0,0,0.25)',
+            },
+            default: {
+                shadowColor: "#000",
+                shadowOffset: { width: 0, height: 10 },
+                shadowOpacity: 0.25,
+                shadowRadius: 10,
+            }
+        }),
         elevation: 10,
     },
     indicator: {

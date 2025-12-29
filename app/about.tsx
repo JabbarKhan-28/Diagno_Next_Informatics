@@ -139,23 +139,24 @@ const styles = StyleSheet.create({
         padding: 40,
         maxWidth: 1200,
         width: '100%',
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.1,
-        shadowRadius: 10,
-        elevation: 5,
-        borderWidth: 1,
-        borderColor: 'rgba(255, 255, 255, 0.5)',
-        alignItems: 'flex-start',
         ...Platform.select({
             web: {
+                boxShadow: '0px 4px 10px rgba(0,0,0,0.1)',
                 backgroundColor: 'rgba(225, 248, 255, 0.5)', 
                 backdropFilter: 'blur(5px)',
             },
             default: {
-                backgroundColor: 'rgba(225, 248, 255, 0.9)', // Higher opacity on mobile to match "whiteness" of blur
+                shadowColor: "#000",
+                shadowOffset: { width: 0, height: 4 },
+                shadowOpacity: 0.1,
+                shadowRadius: 10,
+                backgroundColor: 'rgba(225, 248, 255, 0.9)', 
             }
-        })
+        }),
+        elevation: 5,
+        borderWidth: 1,
+        borderColor: 'rgba(255, 255, 255, 0.5)',
+        alignItems: 'flex-start',
     },
     mainCardMobile: {
         flexDirection: 'column-reverse', // Profile (Image) at Top, Text at Bottom
@@ -221,10 +222,17 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         padding: 10,
         marginBottom: 20,
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.15,
-        shadowRadius: 8,
+        ...Platform.select({
+            web: {
+                boxShadow: '0px 4px 8px rgba(0,0,0,0.15)',
+            },
+            default: {
+                shadowColor: "#000",
+                shadowOffset: { width: 0, height: 4 },
+                shadowOpacity: 0.15,
+                shadowRadius: 8,
+            }
+        }),
         elevation: 5,
     },
     avatar: {

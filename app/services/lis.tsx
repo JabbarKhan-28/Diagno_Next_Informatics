@@ -178,10 +178,17 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         overflow: 'hidden',
         backgroundColor: '#e1f5fe', // Placeholder color
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.1,
-        shadowRadius: 8,
+        ...Platform.select({
+            web: {
+                boxShadow: '0px 4px 8px rgba(0,0,0,0.1)',
+            },
+            default: {
+                shadowColor: "#000",
+                shadowOffset: { width: 0, height: 4 },
+                shadowOpacity: 0.1,
+                shadowRadius: 8,
+            }
+        }),
         elevation: 4,
         // flex: 0 removed, handled by width
     },
