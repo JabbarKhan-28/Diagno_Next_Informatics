@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
                 backgroundColor: 'rgba(225, 248, 255, 0.9)', 
             }
         }),
-        elevation: 5,
+        elevation: Platform.OS === 'android' ? 8 : 5,
         borderWidth: 1,
         borderColor: 'rgba(255, 255, 255, 0.5)',
         alignItems: 'flex-start',
@@ -184,7 +184,11 @@ const styles = StyleSheet.create({
         color: '#004a99',
         fontWeight: 'bold',
         marginBottom: 8,
-        fontFamily: Platform.select({ ios: 'Arial', android: 'sans-serif', web: 'sans-serif' }),
+        fontFamily: Platform.select({ 
+            ios: 'Arial', 
+            android: 'sans-serif-medium', 
+            web: 'sans-serif' 
+        }),
     },
     sectionTitle: {
         fontSize: 16,
@@ -192,6 +196,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 15,
         textTransform: 'uppercase',
+        letterSpacing: Platform.OS === 'android' ? 1.2 : 0,
+        fontFamily: Platform.OS === 'android' ? 'sans-serif-medium' : undefined,
     },
     paragraph: {
         fontSize: 14,

@@ -52,11 +52,14 @@ export default function NavBar() {
             {showNavLinks ? (
                 // Desktop View
                 <View style={styles.navBar}>
-                    <Image 
-                        source={require('../assets/images/logo/Logo.svg')} 
-                        style={styles.logo} 
-                        contentFit="contain"
-                    />
+                    <TouchableOpacity onPress={() => router.push('/')}>
+                        <Image 
+                            source={require('../assets/images/logo/Logo.svg')} 
+                            style={styles.logo} 
+                            
+                            contentFit="contain"
+                        />
+                    </TouchableOpacity>
                     <View style={styles.navLinks}>
                         <TouchableOpacity 
                             onPress={() => router.push('/')}
@@ -291,10 +294,11 @@ const styles = StyleSheet.create({
         color: '#ffffff',
     },
     navLink: {
-        color: '#004a99', // Corporate Blue
-        fontWeight: '600',
+        color: '#004a99', 
+        fontWeight: Platform.OS === 'android' ? '700' : '600',
         fontSize: 15,
-        fontFamily: Platform.select({ ios: 'Arial', android: 'sans-serif', web: 'sans-serif' }),
+        fontFamily: Platform.select({ ios: 'Arial', android: 'sans-serif-medium', web: 'sans-serif' }),
+        letterSpacing: Platform.OS === 'android' ? 0.3 : 0,
     },
     dropdownLink: {
         flexDirection: 'row',
@@ -359,7 +363,12 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 30,
         ...Platform.select({
             web: {
-                backdropFilter: 'blur(15px)', // Blur for web
+                backdropFilter: 'blur(15px)', 
+            },
+            android: {
+                elevation: 10,
+                borderLeftWidth: 1,
+                borderLeftColor: 'rgba(0, 74, 153, 0.1)',
             }
         })
     },
@@ -388,7 +397,8 @@ const styles = StyleSheet.create({
     sidebarLinkText: {
         fontSize: 18,
         color: '#004a99',
-        fontWeight: '700',
+        fontWeight: Platform.OS === 'android' ? 'bold' : '700',
+        fontFamily: Platform.OS === 'android' ? 'sans-serif-medium' : undefined,
     },
     activeSidebarLinkText: {
         color: '#ffffff',

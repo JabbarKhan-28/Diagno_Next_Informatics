@@ -45,7 +45,7 @@ const ContactScreen = () => {
             const templateParams = {
                 name: 'Diagno Next Informatics',
                 from_name: `${firstName} ${lastName}`,
-                email: email,
+                from_email: email,
                 message: message,
             };
 
@@ -239,6 +239,10 @@ const styles = StyleSheet.create({
             web: {
                 boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
             },
+            android: {
+                elevation: 10,
+                shadowColor: "#000",
+            },
             default: {
                 shadowColor: "#000",
                 shadowOffset: { width: 0, height: 5 },
@@ -256,7 +260,11 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#ffffff',
         marginBottom: 30,
-        fontFamily: Platform.select({ ios: 'Arial', android: 'sans-serif', web: 'sans-serif' }),
+        fontFamily: Platform.select({ 
+            ios: 'Arial', 
+            android: 'sans-serif-medium', 
+            web: 'sans-serif' 
+        }),
     },
     formRow: {
         flexDirection: 'row',
@@ -316,9 +324,13 @@ const styles = StyleSheet.create({
         fontSize: 60,
         fontWeight: '800',
         color: '#003e80',
-        lineHeight: 60,
+        lineHeight: Platform.OS === 'android' ? 70 : 60,
         marginBottom: 20,
-        fontFamily: Platform.select({ ios: 'Arial', android: 'sans-serif', web: 'sans-serif' }),
+        fontFamily: Platform.select({ 
+            ios: 'Arial', 
+            android: 'sans-serif-medium', 
+            web: 'sans-serif' 
+        }),
         textAlign: 'right', // Right align title
     },
     infoTitleMobile: {

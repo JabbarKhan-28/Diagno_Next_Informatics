@@ -141,7 +141,11 @@ const styles = StyleSheet.create({
         color: '#004a99',
         textAlign: 'center',
         marginBottom: 24,
-        fontFamily: Platform.select({ ios: 'Arial', android: 'sans-serif', web: 'sans-serif' }),
+        fontFamily: Platform.select({ 
+            ios: 'Arial', 
+            android: 'sans-serif-medium', 
+            web: 'sans-serif' 
+        }),
     },
     titleMobile: {
         fontSize: 24,
@@ -195,6 +199,10 @@ const styles = StyleSheet.create({
         ...Platform.select({
             web: {
                 boxShadow: '0px 8px 20px rgba(0, 74, 153, 0.1)',
+            },
+            android: {
+                elevation: 12,
+                shadowColor: "#004a99",
             },
             default: {
                 shadowColor: "#004a99",

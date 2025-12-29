@@ -143,7 +143,11 @@ const styles = StyleSheet.create({
         color: '#004a99',
         textAlign: 'center',
         marginBottom: 24,
-        fontFamily: Platform.select({ ios: 'Arial', android: 'sans-serif', web: 'sans-serif' }),
+        fontFamily: Platform.select({ 
+            ios: 'Arial', 
+            android: 'sans-serif-medium', 
+            web: 'sans-serif' 
+        }),
     },
     titleMobile: {
         fontSize: 24,
@@ -196,14 +200,18 @@ const styles = StyleSheet.create({
         borderColor: '#f1f5f9',
         ...Platform.select({
             web: {
-                boxShadow: '0px 8px 20px rgba(0, 74, 153, 0.1)',
+                boxShadow: '0px 8px 10px rgba(0,0,0,0.1)',
+            },
+            android: {
+                elevation: 12,
+                shadowColor: "#004a99",
             },
             default: {
-                shadowColor: "#004a99",
-                shadowOffset: { width: 0, height: 6 },
-                shadowOpacity: 0.15,
+                shadowColor: "#000",
+                shadowOffset: { width: 0, height: 4 },
+                shadowOpacity: 0.1,
                 shadowRadius: 10,
-                elevation: 8,
+                elevation: 5,
             }
         }),
     },

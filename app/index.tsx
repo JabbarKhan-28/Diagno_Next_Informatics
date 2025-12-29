@@ -121,13 +121,23 @@ const styles = StyleSheet.create({
     heroTitle: {
         color: 'white',
         fontSize: 42,
-        fontFamily: Platform.select({ ios: 'Times New Roman', android: 'serif', web: 'serif' }),
+        fontFamily: Platform.select({ 
+            ios: 'Times New Roman', 
+            android: 'serif', 
+            web: 'serif' 
+        }),
         fontWeight: '700',
         lineHeight: 56,
         marginBottom: 20,
         ...Platform.select({
             web: {
                textShadow: '1px 1px 10px rgba(0, 0, 0, 0.9)',
+            },
+            android: {
+                textShadowColor: 'rgba(0, 0, 0, 0.8)',
+                textShadowOffset: { width: 2, height: 2 },
+                textShadowRadius: 15,
+                elevation: 4,
             },
             default: {
                 textShadowColor: 'rgba(0, 0, 0, 0.9)',
@@ -161,7 +171,13 @@ const styles = StyleSheet.create({
         color: '#ffffff', 
         fontSize: 16,
         fontWeight: 'bold',
-        fontFamily: Platform.select({ ios: 'serif', android: 'serif', web: 'serif' }),
+        fontFamily: Platform.select({ 
+            ios: 'serif', 
+            android: 'sans-serif-medium', 
+            web: 'serif' 
+        }),
+        textTransform: Platform.OS === 'android' ? 'uppercase' : 'none',
+        letterSpacing: Platform.OS === 'android' ? 1 : 0,
     },
     aboutButtonGradient: {
         paddingVertical: 14,
@@ -177,7 +193,13 @@ const styles = StyleSheet.create({
         color: '#ffffff', 
         fontSize: 16,
         fontWeight: 'bold',
-        fontFamily: Platform.select({ ios: 'serif', android: 'serif', web: 'serif' }),
+        fontFamily: Platform.select({ 
+            ios: 'serif', 
+            android: 'sans-serif-medium', 
+            web: 'serif' 
+        }),
+        textTransform: Platform.OS === 'android' ? 'uppercase' : 'none',
+        letterSpacing: Platform.OS === 'android' ? 1 : 0,
     },
     heroContentMobile: {
         paddingHorizontal: 20, 
