@@ -69,12 +69,22 @@ export default function HomeScreen() {
                 <View style={[styles.actionContainer, isMobile && styles.actionContainerMobile]}>
                     <TouchableOpacity onPress={() => router.push('/contact')}>
                         <LinearGradient
-                            colors={['#5f728a', '#1e2837']} // Matching gradient from screenshot
+                            colors={['#5f728a', '#1e2837']} 
                             start={{x: 0, y: 0.5}}
                             end={{x: 1, y: 0.5}}
                             style={styles.bookButtonGradient}
                         >
                             <Text style={styles.bookButtonText}>Book An Appointment</Text>
+                        </LinearGradient>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => router.push('/about')}>
+                        <LinearGradient
+                            colors={['#5f728a', '#1e2837']} 
+                            start={{x: 0, y: 0.5}}
+                            end={{x: 1, y: 0.5}}
+                            style={styles.aboutButtonGradient}
+                        >
+                            <Text style={styles.aboutButtonText}>Learn More</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                 </View>
@@ -150,12 +160,28 @@ const styles = StyleSheet.create({
         paddingHorizontal: 28,
         borderRadius: 30,
         borderWidth: 1,
-        borderColor: 'rgba(255, 255, 255, 0.2)', // Slightly lighter border for contrast
+        borderColor: 'rgba(255, 255, 255, 0.2)', 
         alignItems: 'center',
         justifyContent: 'center',
     },
     bookButtonText: {
-        color: '#ffffff', // lighter blue-grey
+        color: '#ffffff', 
+        fontSize: 16,
+        fontWeight: 'bold',
+        fontFamily: Platform.select({ ios: 'serif', android: 'serif', web: 'serif' }),
+    },
+    aboutButtonGradient: {
+        paddingVertical: 14,
+        paddingHorizontal: 28,
+        borderRadius: 30,
+        marginLeft: 10,
+        borderWidth: 1,
+        borderColor: 'rgba(255, 255, 255, 0.2)', 
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    aboutButtonText: {
+        color: '#ffffff', 
         fontSize: 16,
         fontWeight: 'bold',
         fontFamily: Platform.select({ ios: 'serif', android: 'serif', web: 'serif' }),

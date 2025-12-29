@@ -1,3 +1,4 @@
+import { Ionicons } from '@expo/vector-icons';
 import { Image } from 'expo-image';
 import { Stack } from 'expo-router';
 import React from 'react';
@@ -31,6 +32,16 @@ const DigitalWorkflowScreen = () => {
                             regulatory standards while enabling seamless collaboration across laboratory teams.
                         </Text>
 
+                        {/* Visual Insights Section Header */}
+                        <View style={[styles.sectionHeader, isMobile && styles.sectionHeaderMobile]}>
+                            <View style={styles.sectionLine} />
+                            <View style={styles.sectionTitleContainer}>
+                                <Ionicons name="images-outline" size={20} color="#004a99" />
+                                <Text style={styles.sectionTitleText}>Visual Insights</Text>
+                            </View>
+                            <View style={styles.sectionLine} />
+                        </View>
+
                         {/* Images Grid */}
                         <View style={[styles.imagesGrid, isMobile && styles.imagesGridMobile]}>
                              {/* Image 1 */}
@@ -39,6 +50,7 @@ const DigitalWorkflowScreen = () => {
                                     source={require('../../assets/images/digital (1).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
+                                    transition={200}
                                 />
                             </View>
                             {/* Image 2 */}
@@ -47,6 +59,7 @@ const DigitalWorkflowScreen = () => {
                                     source={require('../../assets/images/digital (2).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
+                                    transition={200}
                                 />
                             </View>
                             {/* Image 3 */}
@@ -55,6 +68,7 @@ const DigitalWorkflowScreen = () => {
                                     source={require('../../assets/images/digital (3).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
+                                    transition={200}
                                 />
                             </View>
                         </View>
@@ -154,34 +168,78 @@ const styles = StyleSheet.create({
         gap: 40,
         width: '100%',
         justifyContent: 'center', 
+        alignItems: 'center',
         flexWrap: 'wrap',
     },
     imagesGridMobile: {
         flexDirection: 'column',
         gap: 20,
+        alignItems: 'center',
     },
     imagePlaceholder: {
         ...Platform.select({
             web: {
-                width: 300, 
-                height: 200, 
+                width: '94%',
+                maxWidth: 320,
+                height: 260, 
             },
             default: {
-                width: '100%',
-                aspectRatio: 3/2,
+                width: '94%',
+                height: 260,
             }
         }),
+        alignSelf: 'center',
         borderRadius: 20,
         overflow: 'hidden',
-        backgroundColor: 'transparent', 
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.2,
-        shadowRadius: 8,
-        elevation: 6,
+        backgroundColor: '#ffffff', 
+        borderWidth: 1.5,
+        borderColor: '#f1f5f9',
+        ...Platform.select({
+            web: {
+                boxShadow: '0px 8px 20px rgba(0, 74, 153, 0.1)',
+            },
+            default: {
+                shadowColor: "#004a99",
+                shadowOffset: { width: 0, height: 6 },
+                shadowOpacity: 0.15,
+                shadowRadius: 10,
+                elevation: 8,
+            }
+        }),
     },
     gridImage: {
         width: '100%',
         height: '100%',
+    },
+    sectionHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginVertical: 40,
+        width: '100%',
+        gap: 15,
+    },
+    sectionHeaderMobile: {
+        marginVertical: 30,
+    },
+    sectionTitleContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 8,
+        backgroundColor: '#e1f5fe',
+        paddingHorizontal: 16,
+        paddingVertical: 8,
+        borderRadius: 30,
+    },
+    sectionTitleText: {
+        color: '#004a99',
+        fontSize: 16,
+        fontWeight: 'bold',
+        textTransform: 'uppercase',
+        letterSpacing: 1,
+    },
+    sectionLine: {
+        flex: 1,
+        height: 1,
+        backgroundColor: 'rgba(0, 74, 153, 0.1)',
     }
 });
