@@ -1,4 +1,4 @@
-import emailjs, { EmailJSResponseStatus } from '@emailjs/react-native';
+import emailjs from '@emailjs/react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Stack } from 'expo-router';
@@ -43,10 +43,10 @@ const ContactScreen = () => {
             const publicKey = '70UUo9eMlSEZH2fE0';
 
             const templateParams = {
-                name: 'Diagno Next Informatics',
                 from_name: `${firstName} ${lastName}`,
-                from_email: email,
+                from_email: email, 
                 message: message,
+                time: new Date().toLocaleString(), // Fills the {{time}} field in your template
             };
 
             await emailjs.send(serviceID, templateID, templateParams, {
@@ -58,13 +58,10 @@ const ContactScreen = () => {
             setLastName('');
             setEmail('');
             setMessage('');
-        } catch (err) {
-            if (err instanceof EmailJSResponseStatus) {
-                showAlert('error', `Failed to send email: ${err.text}`);
-            } else {
-                console.error(err);
-                showAlert('error', 'An unexpected error occurred. Please try again later.');
-            }
+        } catch (err: any) {
+            console.error('EmailJS Error:', err);
+            const errorMsg = err?.text || err?.message || 'An unexpected error occurred.';
+            showAlert('error', `Failed to send: ${errorMsg}`);
         } finally {
             setLoading(false);
         }
