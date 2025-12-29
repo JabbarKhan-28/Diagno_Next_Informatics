@@ -7,7 +7,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import NavBar from '../../components/NavBar';
 
-const ClinicalInformaticsScreen = () => {
+const DigitalWorkflowScreen = () => {
     const { width } = useWindowDimensions();
     const isMobile = width < 768;
 
@@ -20,17 +20,16 @@ const ClinicalInformaticsScreen = () => {
                 <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
                     <View style={styles.contentContainer}>
                         <Text style={[styles.title, isMobile && styles.titleMobile]}>
-                            Clinical Laboratory Informatics
+                            Digital Workflow Transformation
                         </Text>
 
                         <Text style={[styles.description, isMobile && styles.descriptionMobile]}>
-                            Expertise in LIS/LIMS development, customization, and optimization refers to the ability to
-                            design, build, and tailor Laboratory Information Systems (LIS) or Laboratory Information
-                            Management Systems (LIMS) to meet the specific needs of clinical or research laboratories. It
-                            involves configuring workflows, integrating instruments and databases, ensuring regulatory
-                            compliance, and enhancing system performance to improve efficiency, accuracy, and data
-                            management. This expertise enables laboratories to streamline operations, reduce errors, and
-                            support better clinical and scientific decision-making.
+                            Designing and implementing end-to-end paperless lab processes involves creating fully digital
+                            workflows that eliminate manual paperwork and streamline laboratory operations. This includes
+                            integrating electronic data capture, automated reporting, digital approvals, and secure storage
+                            systems to ensure accuracy, compliance, and traceability. By reducing reliance on paper, these
+                            solutions improve efficiency, minimize errors, enhance data accessibility, and support
+                            regulatory standards while enabling seamless collaboration across laboratory teams.
                         </Text>
 
                         {/* Visual Insights Section Header */}
@@ -48,7 +47,7 @@ const ClinicalInformaticsScreen = () => {
                              {/* Image 1 */}
                             <View style={styles.imagePlaceholder}>
                                <Image 
-                                    source={require('../../assets/images/clinical (1).png')} 
+                                    source={require('../../assets/images/expertise/digital (1).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
@@ -57,7 +56,7 @@ const ClinicalInformaticsScreen = () => {
                             {/* Image 2 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/clinical (2).png')} 
+                                    source={require('../../assets/images/expertise/digital (2).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
@@ -66,7 +65,7 @@ const ClinicalInformaticsScreen = () => {
                             {/* Image 3 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/clinical (3).png')} 
+                                    source={require('../../assets/images/expertise/digital (3).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
@@ -80,7 +79,7 @@ const ClinicalInformaticsScreen = () => {
             {/* Background */}
             <View style={styles.backgroundLayer} />
             <Image 
-                source={require('../../assets/images/about_bg.png')} 
+                source={require('../../assets/images/ui/about_bg.png')} 
                 style={styles.backgroundImage}
                 contentFit="cover"
             />
@@ -89,7 +88,7 @@ const ClinicalInformaticsScreen = () => {
     );
 }
 
-export default ClinicalInformaticsScreen;
+export default DigitalWorkflowScreen;
 
 const styles = StyleSheet.create({
     container: {

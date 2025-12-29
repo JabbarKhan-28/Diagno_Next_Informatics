@@ -30,7 +30,6 @@ const TrainingServiceScreen = () => {
                             enhance efficiency, accuracy, and confidence in technology-driven workflows.
                         </Text>
 
-                        {/* Visual Insights Section Header */}
                         <View style={[styles.sectionHeader, isMobile && styles.sectionHeaderMobile]}>
                             <View style={styles.sectionLine} />
                             <View style={styles.sectionTitleContainer}>
@@ -40,30 +39,26 @@ const TrainingServiceScreen = () => {
                             <View style={styles.sectionLine} />
                         </View>
 
-                        {/* Images Grid */}
                         <View style={[styles.imagesGrid, isMobile && styles.imagesGridMobile]}>
-                             {/* Image 1 */}
                             <View style={styles.imagePlaceholder}>
                                <Image 
-                                    source={require('../../assets/images/training_1.png')} 
+                                     source={require('../../assets/images/services/training_1.png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
                                 />
                             </View>
-                            {/* Image 2 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/training_2.png')} 
+                                     source={require('../../assets/images/services/training_2.png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
                                 />
                             </View>
-                            {/* Image 3 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/training_3.png')} 
+                                     source={require('../../assets/images/services/training_3.png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
@@ -74,10 +69,9 @@ const TrainingServiceScreen = () => {
                 </ScrollView>
             </SafeAreaView>
 
-            {/* Background */}
             <View style={styles.backgroundLayer} />
             <Image 
-                source={require('../../assets/images/about_bg.png')} 
+                source={require('../../assets/images/ui/about_bg.png')} 
                 style={styles.backgroundImage}
                 contentFit="cover"
             />

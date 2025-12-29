@@ -32,7 +32,6 @@ const CustomSoftwareScreen = () => {
                             enhance efficiency, accuracy, and collaboration across laboratory and clinical environments.
                         </Text>
 
-                        {/* Visual Insights Section Header */}
                         <View style={[styles.sectionHeader, isMobile && styles.sectionHeaderMobile]}>
                             <View style={styles.sectionLine} />
                             <View style={styles.sectionTitleContainer}>
@@ -42,30 +41,27 @@ const CustomSoftwareScreen = () => {
                             <View style={styles.sectionLine} />
                         </View>
 
-                        {/* Images Grid */}
                         <View style={[styles.imagesGrid, isMobile && styles.imagesGridMobile]}>
                              {/* Image 1 */}
                             <View style={styles.imagePlaceholder}>
                                <Image 
-                                    source={require('../../assets/images/custom (1).png')} 
+                                     source={require('../../assets/images/expertise/custom (1).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
                                 />
                             </View>
-                            {/* Image 2 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/custom (2).png')} 
+                                     source={require('../../assets/images/expertise/custom (2).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
                                 />
                             </View>
-                            {/* Image 3 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/custom (3).png')} 
+                                     source={require('../../assets/images/expertise/custom (3).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
@@ -79,7 +75,7 @@ const CustomSoftwareScreen = () => {
             {/* Background */}
             <View style={styles.backgroundLayer} />
             <Image 
-                source={require('../../assets/images/about_bg.png')} 
+                source={require('../../assets/images/ui/about_bg.png')} 
                 style={styles.backgroundImage}
                 contentFit="cover"
             />

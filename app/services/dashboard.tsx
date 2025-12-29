@@ -36,34 +36,31 @@ const DashboardServiceScreen = () => {
                             <View style={styles.sectionTitleContainer}>
                                 <Ionicons name="images-outline" size={20} color="#004a99" />
                                 <Text style={styles.sectionTitleText}>Visual Insights</Text>
-                                                    </View>
-                                                    <View style={styles.sectionLine} />
-                                                </View>
+                            </View>
+                            <View style={styles.sectionLine} />
+                        </View>
 
-                        {/* Images Grid */}
                         <View style={[styles.imagesGrid, isMobile && styles.imagesGridMobile]}>
                              {/* Image 1 */}
                              <View style={styles.imagePlaceholder}>
                                <Image 
-                                    source={require('../../assets/images/Reporting (1).png')} 
+                                    source={require('../../assets/images/services/Reporting (1).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
                                 />
                             </View>
-                            {/* Image 2 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/Reporting (2).png')} 
-                                    style={styles.gridImage} 
-                                    contentFit="cover"
-                                    transition={200}
+                                     source={require('../../assets/images/services/Reporting (2).png')} 
+                                     style={styles.gridImage} 
+                                     contentFit="cover"
+                                     transition={200}
                                 />
                             </View>
-                            {/* Image 3 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/Reporting (3).png')} 
+                                     source={require('../../assets/images/services/Reporting (3).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
@@ -74,10 +71,9 @@ const DashboardServiceScreen = () => {
                 </ScrollView>
             </SafeAreaView>
 
-            {/* Background */}
             <View style={styles.backgroundLayer} />
             <Image 
-                source={require('../../assets/images/about_bg.png')} 
+                source={require('../../assets/images/ui/about_bg.png')} 
                 style={styles.backgroundImage}
                 contentFit="cover"
             />

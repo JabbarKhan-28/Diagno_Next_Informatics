@@ -20,7 +20,6 @@ export default function AboutScreen() {
                 <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
                     <View style={[styles.mainCard, isMobile && styles.mainCardMobile]}>
                         
-                        {/* Left Side: Content */}
                         <View style={[styles.textContent, isMobile && styles.textContentMobile]}>
                             <Text style={styles.pageTitle}>About Us</Text>
                             
@@ -58,19 +57,16 @@ export default function AboutScreen() {
                             </Text>
                         </View>
 
-                        {/* Right Side: Profile */}
                         <View style={[styles.profileSection, isMobile && styles.profileSectionMobile]}>
                             <View style={styles.avatarContainer}>
-                                {/* Placeholder for Profile Image - using a simple gradient or generic icon if no asset */}
                                 <LinearGradient
                                     colors={['#b3e5fc', '#e1f5fe']}
                                     style={styles.avatar}
                                 >
-                                     {/*  You can replace this with an actual Image component when you have the asset */}
                                      <Text style={{fontSize: 50}}>👤</Text>
                                 </LinearGradient>
                             </View>
-                            <Text style={styles.profileName}>Dr Hina Ehsan</Text>
+                            <Text style={styles.profileName}>Dr Hina Ahsan</Text>
                             <Text style={styles.profileRole}>CEO Next Diagno Informatics</Text>
                         </View>
 
@@ -80,7 +76,7 @@ export default function AboutScreen() {
             
             <View style={styles.backgroundLayer} />
              <Image 
-                source={require('../assets/images/about_bg.png')} 
+                source={require('../assets/images/ui/about_bg.png')} 
                 style={styles.backgroundImage}
                 contentFit="cover"
              />
@@ -113,7 +109,7 @@ const styles = StyleSheet.create({
         left: 0, 
         right: 0,
         bottom: 0,
-        opacity: 0.3, // Faint background
+        opacity: 0.3,
         zIndex: 0,
     },
     blueOverlay: {
@@ -122,7 +118,7 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         bottom: 0,
-        backgroundColor: 'rgba(173, 216, 230, 0.4)', // Light blue overlay
+        backgroundColor: 'rgba(173, 216, 230, 0.4)',
         zIndex: 1,
     },
     scrollContent: {
@@ -134,7 +130,6 @@ const styles = StyleSheet.create({
     },
     mainCard: {
         flexDirection: 'row',
-        // backgroundColor set via Platform.select below
         borderRadius: 20,
         padding: 40,
         maxWidth: 1200,
@@ -159,7 +154,7 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
     },
     mainCardMobile: {
-        flexDirection: 'column-reverse', // Profile (Image) at Top, Text at Bottom
+        flexDirection: 'column-reverse',
         padding: 24,
     },
     textContent: {
@@ -180,7 +175,7 @@ const styles = StyleSheet.create({
     profileSectionMobile: {
         paddingLeft: 0,
         marginTop: 0,
-        marginBottom: 30, // Space between Profile and Text
+        marginBottom: 30,
         width: '100%',
         alignItems: 'center',
     },

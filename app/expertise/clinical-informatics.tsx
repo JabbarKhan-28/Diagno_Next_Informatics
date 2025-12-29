@@ -7,7 +7,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import NavBar from '../../components/NavBar';
 
-const InteroperabilityScreen = () => {
+const ClinicalInformaticsScreen = () => {
     const { width } = useWindowDimensions();
     const isMobile = width < 768;
 
@@ -20,17 +20,19 @@ const InteroperabilityScreen = () => {
                 <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
                     <View style={styles.contentContainer}>
                         <Text style={[styles.title, isMobile && styles.titleMobile]}>
-                            Interoperability
+                            Clinical Laboratory Informatics
                         </Text>
 
                         <Text style={[styles.description, isMobile && styles.descriptionMobile]}>
-                            Interoperability ensures seamless communication and data exchange between diverse healthcare systems,
-                            devices, and applications. By adopting standardized protocols and robust integration frameworks,
-                            healthcare providers can achieve a unified view of patient data, eliminate silos, and coordinate care
-                            more effectively across different departments and facilities.
+                            Expertise in LIS/LIMS development, customization, and optimization refers to the ability to
+                            design, build, and tailor Laboratory Information Systems (LIS) or Laboratory Information
+                            Management Systems (LIMS) to meet the specific needs of clinical or research laboratories. It
+                            involves configuring workflows, integrating instruments and databases, ensuring regulatory
+                            compliance, and enhancing system performance to improve efficiency, accuracy, and data
+                            management. This expertise enables laboratories to streamline operations, reduce errors, and
+                            support better clinical and scientific decision-making.
                         </Text>
 
-                        {/* Visual Insights Section Header */}
                         <View style={[styles.sectionHeader, isMobile && styles.sectionHeaderMobile]}>
                             <View style={styles.sectionLine} />
                             <View style={styles.sectionTitleContainer}>
@@ -40,30 +42,27 @@ const InteroperabilityScreen = () => {
                             <View style={styles.sectionLine} />
                         </View>
 
-                        {/* Images Grid */}
                         <View style={[styles.imagesGrid, isMobile && styles.imagesGridMobile]}>
                              {/* Image 1 */}
                             <View style={styles.imagePlaceholder}>
                                <Image 
-                                    source={require('../../assets/images/interoperability (1).png')} 
+                                    source={require('../../assets/images/expertise/clinical (1).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
                                 />
                             </View>
-                            {/* Image 2 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/interoperability (2).png')} 
+                                    source={require('../../assets/images/expertise/clinical (2).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
                                 />
                             </View>
-                            {/* Image 3 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/interoperability (3).png')} 
+                                    source={require('../../assets/images/expertise/clinical (3).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
@@ -77,7 +76,7 @@ const InteroperabilityScreen = () => {
             {/* Background */}
             <View style={styles.backgroundLayer} />
             <Image 
-                source={require('../../assets/images/about_bg.png')} 
+                source={require('../../assets/images/ui/about_bg.png')} 
                 style={styles.backgroundImage}
                 contentFit="cover"
             />
@@ -86,7 +85,7 @@ const InteroperabilityScreen = () => {
     );
 }
 
-export default InteroperabilityScreen;
+export default ClinicalInformaticsScreen;
 
 const styles = StyleSheet.create({
     container: {

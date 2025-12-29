@@ -19,7 +19,6 @@ const ContactScreen = () => {
     const [message, setMessage] = useState('');
     const [loading, setLoading] = useState(false);
 
-    // Alert State
     const [alertVisible, setAlertVisible] = useState(false);
     const [alertType, setAlertType] = useState<'success' | 'error'>('success');
     const [alertMessage, setAlertMessage] = useState('');
@@ -39,7 +38,6 @@ const ContactScreen = () => {
         setLoading(true);
 
         try {
-            // REPLACE THESE WITH YOUR ACTUAL EMAILJS SERVICE ID, TEMPLATE ID, AND PUBLIC KEY
             const serviceID = 'service_ytxjbl4';
             const templateID = 'template_bt945jo';
             const publicKey = '70UUo9eMlSEZH2fE0';
@@ -64,7 +62,7 @@ const ContactScreen = () => {
             if (err instanceof EmailJSResponseStatus) {
                 showAlert('error', `Failed to send email: ${err.text}`);
             } else {
-                console.error(err); // Log the full error object for debugging
+                console.error(err);
                 showAlert('error', 'An unexpected error occurred. Please try again later.');
             }
         } finally {
@@ -79,10 +77,8 @@ const ContactScreen = () => {
                 <NavBar />
 
                 <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-                    {/* Main Content Wrapper */}
                     <View style={[styles.contentWrapper, isMobile && styles.contentWrapperMobile]}>
                         
-                        {/* Left Side - Form */}
                         <View style={[styles.formContainer, isMobile && styles.formContainerMobile]}>
                             <Text style={styles.formTitle}>Fill the form</Text>
                             
@@ -145,7 +141,6 @@ const ContactScreen = () => {
                             </TouchableOpacity>
                         </View>
 
-                        {/* Right Side - Info */}
                         <View style={[styles.infoContainer, isMobile && styles.infoContainerMobile]}>
                             <Text style={[styles.infoTitle, isMobile && styles.infoTitleMobile]}>Get in{'\n'}Touch</Text>
                             
@@ -160,7 +155,7 @@ const ContactScreen = () => {
                                         <View style={styles.iconBox}>
                                             <Ionicons name="mail" size={16} color="white" />
                                         </View>
-                                        <Text style={styles.contactValue}>hello@diagnonext.com</Text>
+                                        <Text style={styles.contactValue}>hinaraees80@gmail.com</Text>
                                     </View>
                                 </View>
 
@@ -170,7 +165,7 @@ const ContactScreen = () => {
                                         <View style={styles.iconBox}>
                                             <Ionicons name="call" size={16} color="white" />
                                         </View>
-                                        <Text style={styles.contactValue}>+123-456-7890</Text>
+                                        <Text style={styles.contactValue}>00923335584214</Text>
                                     </View>
                                 </View>
                             </View>
@@ -180,7 +175,6 @@ const ContactScreen = () => {
                 </ScrollView>
             </SafeAreaView>
 
-            {/* Styled Alert */}
             <StyledAlert 
                 visible={alertVisible}
                 type={alertType}
@@ -188,7 +182,6 @@ const ContactScreen = () => {
                 onClose={() => setAlertVisible(false)}
             />
 
-            {/* Background Gradient */}
             <LinearGradient
                 colors={['#ffffff', '#a5d8ff', '#8abdff']}
                 locations={[0, 0.5, 1]}
@@ -235,7 +228,6 @@ const styles = StyleSheet.create({
         flexDirection: 'column', 
         gap: 40,
     },
-    // Form Styles
     formContainer: {
         flex: 1,
         backgroundColor: '#4a8bdd', 
@@ -311,7 +303,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
 
-    // Info Styles
     infoContainer: {
         flex: 1,
         justifyContent: 'center',
@@ -340,7 +331,7 @@ const styles = StyleSheet.create({
         marginBottom: 40,
         maxWidth: 400,
         opacity: 0.8,
-        textAlign: 'right', // Right align description
+        textAlign: 'right',
     },
     infoDescriptionMobile: {
         textAlign: 'center',
@@ -348,18 +339,18 @@ const styles = StyleSheet.create({
     contactDetailsRow: {
         flexDirection: 'row',
         gap: 40,
-        justifyContent: 'flex-end', // Align contact details row to the right
+        justifyContent: 'flex-end',
         width: '100%',
     },
     contactDetailsRowMobile: {
         flexDirection: 'column',
         gap: 20,
-        alignItems: 'center', // Center on mobile
+        alignItems: 'center',
         justifyContent: 'center',
     },
     contactItem: {
         gap: 5,
-        alignItems: 'flex-end', // Align individual contact items to the right
+        alignItems: 'flex-end',
     },
     contactItemMobile: {
         alignItems: 'center',

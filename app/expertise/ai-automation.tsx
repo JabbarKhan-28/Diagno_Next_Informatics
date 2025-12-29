@@ -7,7 +7,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import NavBar from '../../components/NavBar';
 
-const HealthcareDataScreen = () => {
+const AiAutomationScreen = () => {
     const { width } = useWindowDimensions();
     const isMobile = width < 768;
 
@@ -20,19 +20,18 @@ const HealthcareDataScreen = () => {
                 <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
                     <View style={styles.contentContainer}>
                         <Text style={[styles.title, isMobile && styles.titleMobile]}>
-                            Healthcare Data Intelligence
+                            AI & Automation in Diagnostics
                         </Text>
 
                         <Text style={[styles.description, isMobile && styles.descriptionMobile]}>
-                             Advanced analytics and AI-driven insights for clinical decision-making involve applying
-                            machine learning, predictive modeling, and data visualization techniques to transform
-                            complex clinical data into actionable knowledge. This expertise supports healthcare
-                            professionals by identifying patterns, predicting outcomes, and providing evidence-based
-                            recommendations that enhance diagnostic accuracy, personalize treatments, and improve
-                            patient outcomes while ensuring efficiency in clinical workflows.
+                            Implementing machine learning tools for predictive diagnostics and process efficiency with the integration
+                            of Omic data analysis involves leveraging advanced algorithms to detect patterns in genomic, proteomic,
+                            and metabolomic datasets. By combining these insights with clinical and laboratory data, predictive
+                            models can identify disease risks earlier, optimize diagnostic accuracy, and streamline lab operations. This
+                            integration enhances personalized medicine, improves resource utilization, and supports data-driven
+                            decision-making in healthcare and research environments.
                         </Text>
 
-                        {/* Visual Insights Section Header */}
                         <View style={[styles.sectionHeader, isMobile && styles.sectionHeaderMobile]}>
                             <View style={styles.sectionLine} />
                             <View style={styles.sectionTitleContainer}>
@@ -42,30 +41,26 @@ const HealthcareDataScreen = () => {
                             <View style={styles.sectionLine} />
                         </View>
 
-                        {/* Images Grid */}
                         <View style={[styles.imagesGrid, isMobile && styles.imagesGridMobile]}>
-                             {/* Image 1 */}
                             <View style={styles.imagePlaceholder}>
                                <Image 
-                                    source={require('../../assets/images/healthcare (1).png')} 
+                                     source={require('../../assets/images/expertise/automation (1).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
                                 />
                             </View>
-                            {/* Image 2 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/healthcare (2).png')} 
+                                     source={require('../../assets/images/expertise/automation (2).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
                                 />
                             </View>
-                            {/* Image 3 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/healthcare (3).png')} 
+                                     source={require('../../assets/images/expertise/automation (3).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
@@ -76,10 +71,9 @@ const HealthcareDataScreen = () => {
                 </ScrollView>
             </SafeAreaView>
 
-            {/* Background */}
             <View style={styles.backgroundLayer} />
             <Image 
-                source={require('../../assets/images/about_bg.png')} 
+                source={require('../../assets/images/ui/about_bg.png')} 
                 style={styles.backgroundImage}
                 contentFit="cover"
             />
@@ -88,7 +82,7 @@ const HealthcareDataScreen = () => {
     );
 }
 
-export default HealthcareDataScreen;
+export default AiAutomationScreen;
 
 const styles = StyleSheet.create({
     container: {

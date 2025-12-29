@@ -30,7 +30,6 @@ const DataMigrationServiceScreen = () => {
                             faster access, improved collaboration, and reliable backup for seamless laboratory operations.
                         </Text>
 
-                        {/* Visual Insights Section Header */}
                         <View style={[styles.sectionHeader, isMobile && styles.sectionHeaderMobile]}>
                             <View style={styles.sectionLine} />
                             <View style={styles.sectionTitleContainer}>
@@ -40,30 +39,26 @@ const DataMigrationServiceScreen = () => {
                             <View style={styles.sectionLine} />
                         </View>
 
-                        {/* Images Grid */}
                         <View style={[styles.imagesGrid, isMobile && styles.imagesGridMobile]}>
-                             {/* Image 1 */}
-                            <View style={styles.imagePlaceholder}>
+                             <View style={styles.imagePlaceholder}>
                                <Image 
-                                    source={require('../../assets/images/dm_1.png')} 
+                                     source={require('../../assets/images/services/dm_1.png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
                                 />
                             </View>
-                            {/* Image 2 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/dm_2.png')} 
+                                     source={require('../../assets/images/services/dm_2.png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
                                 />
                             </View>
-                            {/* Image 3 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/dm_3.png')} 
+                                     source={require('../../assets/images/services/dm_3.png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
@@ -74,10 +69,9 @@ const DataMigrationServiceScreen = () => {
                 </ScrollView>
             </SafeAreaView>
 
-            {/* Background */}
             <View style={styles.backgroundLayer} />
             <Image 
-                source={require('../../assets/images/about_bg.png')} 
+                source={require('../../assets/images/ui/about_bg.png')} 
                 style={styles.backgroundImage}
                 contentFit="cover"
             />
@@ -121,7 +115,7 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         bottom: 0,
-        backgroundColor: 'rgba(173, 216, 230, 0.6)', // Increased opacity slightly to match the bluer look in the screenshot if needed, or keep 0.4
+        backgroundColor: 'rgba(173, 216, 230, 0.6)',
         zIndex: 1,
     },
     scrollContent: {
@@ -148,9 +142,9 @@ const styles = StyleSheet.create({
         textAlign: 'left',
     },
     description: {
-        fontSize: 18, // Slightly larger looking in screenshot
+        fontSize: 18,
         lineHeight: 28,
-        color: '#004a99', // The text in screenshot looks blueish/dark blue, unlike the gray in LIS screen. Wait, screenshot text looks dark blue. LIS was #334155 (slate).
+        color: '#004a99',
         textAlign: 'justify',
         marginBottom: 40,
         maxWidth: 1000,
@@ -163,7 +157,7 @@ const styles = StyleSheet.create({
     },
     imagesGrid: {
         flexDirection: 'row',
-        gap: 40, // More spacing in screenshot?
+        gap: 40,
         width: '100%',
         justifyContent: 'center', 
         alignItems: 'center',

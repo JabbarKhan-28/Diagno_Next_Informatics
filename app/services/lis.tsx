@@ -32,7 +32,6 @@ const LISServiceScreen = () => {
                             regular updates to enhance efficiency, accuracy, and data security in laboratory processes.
                         </Text>
 
-                        {/* Visual Insights Section Header */}
                         <View style={[styles.sectionHeader, isMobile && styles.sectionHeaderMobile]}>
                             <View style={styles.sectionLine} />
                             <View style={styles.sectionTitleContainer}>
@@ -42,30 +41,26 @@ const LISServiceScreen = () => {
                             <View style={styles.sectionLine} />
                         </View>
 
-                        {/* Images Grid */}
                         <View style={[styles.imagesGrid, isMobile && styles.imagesGridMobile]}>
-                             {/* Image 1 */}
                              <View style={styles.imagePlaceholder}>
                                <Image 
-                                    source={require('../../assets/images/lab_image_1.png')} 
+                                     source={require('../../assets/images/services/lab_image_1.png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
                                 />
                             </View>
-                            {/* Image 2 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/lab_image_2.png')} 
+                                     source={require('../../assets/images/services/lab_image_2.png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
                                 />
                             </View>
-                            {/* Image 3 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/lab_image_3.png')} 
+                                     source={require('../../assets/images/services/lab_image_3.png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
@@ -76,10 +71,9 @@ const LISServiceScreen = () => {
                 </ScrollView>
             </SafeAreaView>
 
-            {/* Background */}
             <View style={styles.backgroundLayer} />
             <Image 
-                source={require('../../assets/images/about_bg.png')} 
+                source={require('../../assets/images/ui/about_bg.png')} 
                 style={styles.backgroundImage}
                 contentFit="cover"
              />
@@ -122,7 +116,7 @@ const styles = StyleSheet.create({
         top: 0,
         left: 0,
         right: 0,
-        bottom: 0, // Light blue overlay to match theme
+        bottom: 0,
         backgroundColor: 'rgba(173, 216, 230, 0.4)',
         zIndex: 1,
     },
@@ -135,7 +129,7 @@ const styles = StyleSheet.create({
     contentContainer: {
         maxWidth: 1200,
         width: '100%',
-        alignItems: 'center', // Center content horizontally
+        alignItems: 'center',
     },
     title: {
         fontSize: 32,
@@ -153,12 +147,11 @@ const styles = StyleSheet.create({
         fontSize: 16,
         lineHeight: 26,
         color: '#334155',
-        textAlign: 'justify', // Per screenshot looks justified or centered? Screenshot looks left/justified.
+        textAlign: 'justify',
         marginBottom: 40,
         maxWidth: 1000,
         ...Platform.select({
              web: {
-                 // On web, textShadow helps readability against background
              }
         })
     },

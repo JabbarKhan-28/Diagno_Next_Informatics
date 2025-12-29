@@ -2,7 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 import { Stack, usePathname, useRouter } from 'expo-router';
 import React, { useMemo } from 'react';
-import { Platform, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 
 const SERVICES = [
   '/services/lis',
@@ -17,22 +17,22 @@ const SERVICES = [
   '/services/bi',
 ];
 
-const EXPERTIES = [
-  '/experties/clinical-informatics',
-  '/experties/healthcare-data',
-  '/experties/digital-workflow',
-  '/experties/diagnostics-it',
-  '/experties/interoperability',
-  '/experties/regulatory',
-  '/experties/ai-automation',
-  '/experties/custom-software',
+const EXPERTISE = [
+  '/expertise/clinical-informatics',
+  '/expertise/healthcare-data',
+  '/expertise/digital-workflow',
+  '/expertise/diagnostics-it',
+  '/expertise/interoperability',
+  '/expertise/regulatory',
+  '/expertise/ai-automation',
+  '/expertise/custom-software',
 ];
 
 const ORDERED_ROUTES = [
   '/',
   '/about',
   ...SERVICES,
-  ...EXPERTIES,
+  ...EXPERTISE,
   '/contact',
 ];
 
@@ -46,16 +46,14 @@ export default function RootLayout() {
 
   const handleNavigation = (direction: 'next' | 'prev') => {
     if (currentIndex === -1) {
-        // Fallback if current route is not in list, go Home
         router.push('/');
         return;
     }
 
     let newIndex = direction === 'next' ? currentIndex + 1 : currentIndex - 1;
 
-    // Boundary checks
-    if (newIndex < 0) newIndex = 0; // Stick to start
-    if (newIndex >= ORDERED_ROUTES.length) newIndex = ORDERED_ROUTES.length - 1; // Stick to end
+    if (newIndex < 0) newIndex = 0;
+    if (newIndex >= ORDERED_ROUTES.length) newIndex = ORDERED_ROUTES.length - 1;
 
     if (newIndex !== currentIndex) {
         router.push(ORDERED_ROUTES[newIndex] as any);
@@ -64,7 +62,6 @@ export default function RootLayout() {
 
   const showControls = currentIndex !== -1;
 
-  // Render navigation controls overlay
   const NavigationControls = () => {
       if (!showControls) return null;
       
@@ -115,7 +112,7 @@ const styles = StyleSheet.create({
     },
     glassPill: {
         flexDirection: 'row',
-        backgroundColor: 'rgba(0, 0, 0, 0.3)', // Semi-transparent dark
+        backgroundColor: 'rgba(0, 0, 0, 0.3)',
         borderRadius: 30,
         paddingHorizontal: 5,
         paddingVertical: 5,

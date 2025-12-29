@@ -7,7 +7,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import NavBar from '../../components/NavBar';
 
-const DigitalWorkflowScreen = () => {
+const InteroperabilityScreen = () => {
     const { width } = useWindowDimensions();
     const isMobile = width < 768;
 
@@ -20,16 +20,14 @@ const DigitalWorkflowScreen = () => {
                 <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
                     <View style={styles.contentContainer}>
                         <Text style={[styles.title, isMobile && styles.titleMobile]}>
-                            Digital Workflow Transformation
+                            Interoperability
                         </Text>
 
                         <Text style={[styles.description, isMobile && styles.descriptionMobile]}>
-                            Designing and implementing end-to-end paperless lab processes involves creating fully digital
-                            workflows that eliminate manual paperwork and streamline laboratory operations. This includes
-                            integrating electronic data capture, automated reporting, digital approvals, and secure storage
-                            systems to ensure accuracy, compliance, and traceability. By reducing reliance on paper, these
-                            solutions improve efficiency, minimize errors, enhance data accessibility, and support
-                            regulatory standards while enabling seamless collaboration across laboratory teams.
+                            Interoperability ensures seamless communication and data exchange between diverse healthcare systems,
+                            devices, and applications. By adopting standardized protocols and robust integration frameworks,
+                            healthcare providers can achieve a unified view of patient data, eliminate silos, and coordinate care
+                            more effectively across different departments and facilities.
                         </Text>
 
                         {/* Visual Insights Section Header */}
@@ -47,7 +45,7 @@ const DigitalWorkflowScreen = () => {
                              {/* Image 1 */}
                             <View style={styles.imagePlaceholder}>
                                <Image 
-                                    source={require('../../assets/images/digital (1).png')} 
+                                    source={require('../../assets/images/expertise/interoperability (1).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
@@ -56,7 +54,7 @@ const DigitalWorkflowScreen = () => {
                             {/* Image 2 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/digital (2).png')} 
+                                    source={require('../../assets/images/expertise/interoperability (2).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
@@ -65,7 +63,7 @@ const DigitalWorkflowScreen = () => {
                             {/* Image 3 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/digital (3).png')} 
+                                    source={require('../../assets/images/expertise/interoperability (3).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
@@ -79,7 +77,7 @@ const DigitalWorkflowScreen = () => {
             {/* Background */}
             <View style={styles.backgroundLayer} />
             <Image 
-                source={require('../../assets/images/about_bg.png')} 
+                source={require('../../assets/images/ui/about_bg.png')} 
                 style={styles.backgroundImage}
                 contentFit="cover"
             />
@@ -88,7 +86,7 @@ const DigitalWorkflowScreen = () => {
     );
 }
 
-export default DigitalWorkflowScreen;
+export default InteroperabilityScreen;
 
 const styles = StyleSheet.create({
     container: {

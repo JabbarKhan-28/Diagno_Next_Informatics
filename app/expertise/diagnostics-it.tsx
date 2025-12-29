@@ -7,7 +7,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import NavBar from '../../components/NavBar';
 
-const RegulatoryComplianceScreen = () => {
+const DiagnosticsITScreen = () => {
     const { width } = useWindowDimensions();
     const isMobile = width < 768;
 
@@ -20,16 +20,14 @@ const RegulatoryComplianceScreen = () => {
                 <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
                     <View style={styles.contentContainer}>
                         <Text style={[styles.title, isMobile && styles.titleMobile]}>
-                            Regulatory Compliance & Data Security
+                            Diagnostics IT Solutions
                         </Text>
 
                         <Text style={[styles.description, isMobile && styles.descriptionMobile]}>
-                            Ensuring adherence to HIPAA, GDPR, ISO, and CAP/CLIA standards involves implementing robust data
-                            privacy, security, and quality management practices across laboratory systems and workflows. This
-                            includes safeguarding patient health information, maintaining regulatory compliance, standardizing
-                            processes, and aligning with international guidelines for laboratory operations. Such compliance not
-                            only builds trust and accountability but also ensures accuracy, reliability, and legal integrity in clinical
-                            and laboratory practices.
+                            Diagnostics IT Solutions encompass a range of specialized software and hardware integrations designed
+                            to optimize diagnostic workflows. From automated instrument interfacing to advanced data management
+                            systems, these solutions ensure that diagnostic data is captured, processed, and reported with
+                            capabilities that meet the evolving needs of modern healthcare environments.
                         </Text>
 
                         {/* Visual Insights Section Header */}
@@ -47,7 +45,7 @@ const RegulatoryComplianceScreen = () => {
                              {/* Image 1 */}
                             <View style={styles.imagePlaceholder}>
                                <Image 
-                                    source={require('../../assets/images/regulatory (1).png')} 
+                                     source={require('../../assets/images/expertise/custom (1).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
@@ -56,7 +54,7 @@ const RegulatoryComplianceScreen = () => {
                             {/* Image 2 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/regulatory (2).png')} 
+                                     source={require('../../assets/images/expertise/custom (2).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
@@ -65,7 +63,7 @@ const RegulatoryComplianceScreen = () => {
                             {/* Image 3 */}
                              <View style={styles.imagePlaceholder}>
                                 <Image 
-                                    source={require('../../assets/images/regulatory (3).png')} 
+                                     source={require('../../assets/images/expertise/custom (3).png')} 
                                     style={styles.gridImage} 
                                     contentFit="cover"
                                     transition={200}
@@ -79,7 +77,7 @@ const RegulatoryComplianceScreen = () => {
             {/* Background */}
             <View style={styles.backgroundLayer} />
             <Image 
-                source={require('../../assets/images/about_bg.png')} 
+                source={require('../../assets/images/ui/about_bg.png')} 
                 style={styles.backgroundImage}
                 contentFit="cover"
             />
@@ -88,7 +86,7 @@ const RegulatoryComplianceScreen = () => {
     );
 }
 
-export default RegulatoryComplianceScreen;
+export default DiagnosticsITScreen;
 
 const styles = StyleSheet.create({
     container: {

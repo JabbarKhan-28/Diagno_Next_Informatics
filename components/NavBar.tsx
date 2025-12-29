@@ -11,7 +11,7 @@ export default function NavBar() {
     const showNavLinks = width >= 768; // Show links only on tablet/desktop
     const [menuVisible, setMenuVisible] = useState(false);
     const [servicesDropdownVisible, setServicesDropdownVisible] = useState(false);
-    const [expertiesDropdownVisible, setExpertiesDropdownVisible] = useState(false);
+    const [expertiseDropdownVisible, setExpertiseDropdownVisible] = useState(false);
 
     const services = [
         { title: 'Laboratory Information System (LIS) Implementation & Support', path: '/services/lis' },
@@ -26,26 +26,26 @@ export default function NavBar() {
         { title: 'Business Intelligence Services - KPI Monitoring & Performance Analytics', path: '/services/bi' },
     ];
 
-    const experties = [
-        { title: 'Clinical Laboratory Informatics', path: '/experties/clinical-informatics' },
-        { title: 'Healthcare Data Intelligence', path: '/experties/healthcare-data' },
-        { title: 'Digital Workflow Transformation', path: '/experties/digital-workflow' },
-        { title: 'Diagnostics IT Solutions', path: '/experties/diagnostics-it' },
-        { title: 'Interoperability', path: '/experties/interoperability' },
-        { title: 'Regulatory Compliance & Data Security', path: '/experties/regulatory' },
-        { title: 'AI & Automation in Diagnostics', path: '/experties/ai-automation' },
-        { title: 'Custom Software Development', path: '/experties/custom-software' },
+    const expertise = [
+        { title: 'Clinical Laboratory Informatics', path: '/expertise/clinical-informatics' },
+        { title: 'Healthcare Data Intelligence', path: '/expertise/healthcare-data' },
+        { title: 'Digital Workflow Transformation', path: '/expertise/digital-workflow' },
+        { title: 'Diagnostics IT Solutions', path: '/expertise/diagnostics-it' },
+        { title: 'Interoperability', path: '/expertise/interoperability' },
+        { title: 'Regulatory Compliance & Data Security', path: '/expertise/regulatory' },
+        { title: 'AI & Automation in Diagnostics', path: '/expertise/ai-automation' },
+        { title: 'Custom Software Development', path: '/expertise/custom-software' },
     ];
 
     const onNavPress = (path: string) => {
         setMenuVisible(false);
         setServicesDropdownVisible(false);
-        setExpertiesDropdownVisible(false); // Close all menus
+        setExpertiseDropdownVisible(false); // Close all menus
         router.push(path as any);
     };
 
     const isServicesActive = pathname.startsWith('/services');
-    const isExpertiesActive = pathname.startsWith('/experties');
+    const isExpertiseActive = pathname.startsWith('/expertise');
 
     return (
         <View style={styles.navBarContainer}>
@@ -53,7 +53,7 @@ export default function NavBar() {
                 // Desktop View
                 <View style={styles.navBar}>
                     <Image 
-                        source={require('../assets/images/Logo.svg')} 
+                        source={require('../assets/images/logo/Logo.svg')} 
                         style={styles.logo} 
                         contentFit="contain"
                     />
@@ -75,7 +75,7 @@ export default function NavBar() {
                                 style={[styles.dropdownLink, isServicesActive && styles.activeNavLinkContainer]} 
                                 onPress={() => {
                                     setServicesDropdownVisible(!servicesDropdownVisible);
-                                    setExpertiesDropdownVisible(false);
+                                    setExpertiseDropdownVisible(false);
                                 }}
                             >
                                 <Text style={[styles.navLink, isServicesActive && styles.activeNavLinkText]}>Services & Solutions</Text>
@@ -99,20 +99,20 @@ export default function NavBar() {
                         </View>
                         <View style={{ zIndex: 11 }}>
                             <TouchableOpacity 
-                                style={[styles.dropdownLink, isExpertiesActive && styles.activeNavLinkContainer]}
+                                style={[styles.dropdownLink, isExpertiseActive && styles.activeNavLinkContainer]}
                                 onPress={() => {
-                                    setExpertiesDropdownVisible(!expertiesDropdownVisible);
+                                    setExpertiseDropdownVisible(!expertiseDropdownVisible);
                                     setServicesDropdownVisible(false);
                                 }}
                             >
-                                <Text style={[styles.navLink, isExpertiesActive && styles.activeNavLinkText]}>Our Experties</Text>
-                                <Ionicons name={expertiesDropdownVisible ? "caret-up" : "caret-down"} size={12} color={isExpertiesActive ? "#ffffff" : "#004a99"} style={styles.caret} /> 
+                                <Text style={[styles.navLink, isExpertiseActive && styles.activeNavLinkText]}>Our Expertise</Text>
+                                <Ionicons name={expertiseDropdownVisible ? "caret-up" : "caret-down"} size={12} color={isExpertiseActive ? "#ffffff" : "#004a99"} style={styles.caret} /> 
                             </TouchableOpacity>
 
-                            {/* Desktop Experties Dropdown Menu */}
-                            {expertiesDropdownVisible && (
+                            {/* Desktop Expertise Dropdown Menu */}
+                            {expertiseDropdownVisible && (
                                 <View style={[styles.dropdownMenu, { left: -50, width: 280 }]}> 
-                                    {experties.map((exp, index) => (
+                                    {expertise.map((exp, index) => (
                                         <TouchableOpacity 
                                             key={index} 
                                             style={[styles.dropdownItem, pathname === exp.path && styles.activeDropdownItem]}
@@ -136,7 +136,7 @@ export default function NavBar() {
                 // Mobile View - Distinct Structure
                 <View style={styles.mobileNavContainer}>
                         <Image 
-                        source={require('../assets/images/Logo.svg')} 
+                        source={require('../assets/images/logo/Logo.svg')} 
                         style={styles.logoMobile} 
                         contentFit="contain"
                     />
@@ -198,16 +198,16 @@ export default function NavBar() {
                                         </View>
                                     )}
 
-                                    {/* Our Experties */}
-                                    <TouchableOpacity onPress={() => setExpertiesDropdownVisible(!expertiesDropdownVisible)} style={styles.sidebarLinkItem}>
+                                    {/* Our Expertise */}
+                                    <TouchableOpacity onPress={() => setExpertiseDropdownVisible(!expertiseDropdownVisible)} style={styles.sidebarLinkItem}>
                                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                                            <Text style={styles.sidebarLinkText}>Our Experties</Text>
-                                            <Ionicons name={expertiesDropdownVisible ? "chevron-up" : "chevron-down"} size={20} color="#004a99" />
+                                            <Text style={styles.sidebarLinkText}>Our Expertise</Text>
+                                            <Ionicons name={expertiseDropdownVisible ? "chevron-up" : "chevron-down"} size={20} color="#004a99" />
                                         </View>
                                     </TouchableOpacity>
-                                    {expertiesDropdownVisible && (
+                                    {expertiseDropdownVisible && (
                                         <View style={styles.mobileAccordion}>
-                                            {experties.map((exp, index) => (
+                                            {expertise.map((exp, index) => (
                                                 <TouchableOpacity 
                                                     key={index} 
                                                     style={[styles.accordionItem, pathname === exp.path && styles.activeAccordionItem]}

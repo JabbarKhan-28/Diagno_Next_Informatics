@@ -8,11 +8,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 import { useRouter } from 'expo-router';
 import NavBar from '../components/NavBar';
-// ... (imports)
 
 export default function HomeScreen() {
     const router = useRouter();
-// ... (rest of code)
   const { width } = useWindowDimensions();
   const isMobile = width < 768;
 
@@ -25,12 +23,11 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <StatusBar style="light" />
       
-      {/* Background Container */}
       <View style={[styles.backgroundContainer, { backgroundColor: '#000814' }]}>
           {mounted && (
               <Video
                 key="bg-video-contain"
-                source={require('../assets/images/background.mp4')}
+                source={require('../assets/video/background.mp4')}
                 style={StyleSheet.absoluteFillObject}
                 resizeMode={ResizeMode.CONTAIN}
                 shouldPlay
@@ -39,9 +36,6 @@ export default function HomeScreen() {
               />
           )}
           <View style={styles.overlay} />
-          
-          {/* DNA Strand Decoration (Simulated with simple shapes or gradient - optional, but helps match look) */}
-          {/* For now, just a dark gradient effect is achieved via the overlay and bg color */}
       </View>
 
        {/* Navbar */}
@@ -49,7 +43,6 @@ export default function HomeScreen() {
         <NavBar />
 
 
-        {/* content container */}
         <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
             {/* Hero Content */}
             <View style={[styles.heroContent, isMobile && styles.heroContentMobile]}>
@@ -99,7 +92,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#000814', // Deep dark blue/black
+        backgroundColor: '#000814',
     },
     backgroundContainer: {
         ...StyleSheet.absoluteFillObject,
@@ -108,7 +101,7 @@ const styles = StyleSheet.create({
  
     overlay: {
          ...StyleSheet.absoluteFillObject,
-         backgroundColor: 'rgba(0,0,0,0.2)' // Slight darken
+         backgroundColor: 'rgba(0,0,0,0.2)'
     },
     safeArea: {
         flex: 1,
@@ -174,7 +167,7 @@ const styles = StyleSheet.create({
         paddingVertical: 14,
         paddingHorizontal: 28,
         borderRadius: 30,
-        marginLeft: 10,
+        marginLeft: Platform.OS === 'web' ? 10 : 0,
         borderWidth: 1,
         borderColor: 'rgba(255, 255, 255, 0.2)', 
         alignItems: 'center',
@@ -186,11 +179,11 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontFamily: Platform.select({ ios: 'serif', android: 'serif', web: 'serif' }),
     },
-    // Mobile Adjustments
     heroContentMobile: {
-        paddingHorizontal: 20, // Slightly tighter padding for small screens
+        paddingHorizontal: 20, 
         marginTop: 10,
         marginBottom: 20,
+        paddingBottom: 40, 
     },
     heroTitleMobile: {
         fontSize: 28,
@@ -199,15 +192,15 @@ const styles = StyleSheet.create({
         marginBottom: 16,
     },
     heroSubtitleMobile: {
-        fontSize: 16,
-        lineHeight: 24,
         textAlign: 'left',
-        marginBottom: 24, // Reduced margin
-        color: '#e0e0e0', // Ensure visibility
+        marginBottom: 24,
+        color: '#e0e0e0',
     },
     actionContainerMobile: {
-        justifyContent: 'flex-start',
-        marginBottom: 40,
-        width: '100%', // Full width for better tap area
-    }
+        flexDirection: 'column',
+        alignItems: 'stretch',
+        gap: 15,
+        marginBottom: Platform.OS === 'android' ? 60 : 40,
+        width: '100%',
+    },
 });
