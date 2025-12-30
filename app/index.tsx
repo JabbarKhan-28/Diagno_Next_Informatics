@@ -238,6 +238,11 @@ const styles = StyleSheet.create({
     backgroundContainer: {
         ...StyleSheet.absoluteFillObject,
         zIndex: -1,
+        ...Platform.select({
+            web: {
+                position: 'fixed',
+            }
+        })
     },
     overlay: {
         ...StyleSheet.absoluteFillObject,

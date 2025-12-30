@@ -164,6 +164,7 @@ const styles = StyleSheet.create({
     textContentMobile: {
         paddingRight: 0,
         marginBottom: 0, 
+        flex: 0,
     },
     profileSection: {
         flex: 1,
@@ -178,6 +179,7 @@ const styles = StyleSheet.create({
         marginBottom: 30,
         width: '100%',
         alignItems: 'center',
+        flex: 0,
     },
     pageTitle: {
         fontSize: 36,
@@ -208,7 +210,7 @@ const styles = StyleSheet.create({
         fontWeight: '500',
     },
     paragraphMobile: {
-        fontSize: 14, // Standard size often better for density
+        fontSize: 16, // Standard size often better for density
         lineHeight: 22,
         textAlign: 'left',
         marginBottom: 10,
