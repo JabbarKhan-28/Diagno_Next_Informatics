@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         bottom: 0,
-        backgroundColor: 'rgba(173, 216, 230, 0.4)',
+        backgroundColor: 'rgba(173, 216, 230, 0.25)',
         zIndex: 1,
     },
     scrollContent: {
@@ -200,11 +200,12 @@ const styles = StyleSheet.create({
         fontFamily: Platform.OS === 'android' ? 'sans-serif-medium' : undefined,
     },
     paragraph: {
-        fontSize: 14,
-        color: '#334155',
-        lineHeight: 22,
+        fontSize: 18,
+        color: '#004a99',
+        lineHeight: 28,
         marginBottom: 15,
         textAlign: 'justify',
+        fontWeight: '500',
     },
     paragraphMobile: {
         fontSize: 14, // Standard size often better for density

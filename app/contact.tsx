@@ -85,7 +85,7 @@ const ContactScreen = () => {
                                     <TextInput 
                                         style={styles.input} 
                                         placeholder="John" 
-                                        placeholderTextColor="#9ca3af"
+                                        placeholderTextColor="#6B7280"
                                         value={firstName}
                                         onChangeText={setFirstName}
                                     />
@@ -95,7 +95,7 @@ const ContactScreen = () => {
                                     <TextInput 
                                         style={styles.input} 
                                         placeholder="Doe" 
-                                        placeholderTextColor="#9ca3af"
+                                        placeholderTextColor="#6B7280"
                                         value={lastName}
                                         onChangeText={setLastName}
                                     />
@@ -107,7 +107,7 @@ const ContactScreen = () => {
                                 <TextInput 
                                     style={styles.input} 
                                     placeholder="abc@gmail.com" 
-                                    placeholderTextColor="#9ca3af"
+                                    placeholderTextColor="#6B7280"
                                     keyboardType="email-address" 
                                     value={email}
                                     onChangeText={setEmail}
@@ -120,7 +120,7 @@ const ContactScreen = () => {
                                 <TextInput 
                                     style={[styles.input, styles.textArea]} 
                                     placeholder="How can we help you?"
-                                    placeholderTextColor="#9ca3af" 
+                                    placeholderTextColor="#6B7280" 
                                     multiline 
                                     numberOfLines={4}
                                     textAlignVertical="top" 
@@ -180,7 +180,7 @@ const ContactScreen = () => {
             />
 
             <LinearGradient
-                colors={['#ffffff', '#a5d8ff', '#8abdff']}
+                colors={['#F0F9FF', '#BAE6FD', '#7DD3FC']}
                 locations={[0, 0.5, 1]}
                 style={styles.backgroundGradient}
             />
@@ -334,13 +334,14 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     infoDescription: {
-        fontSize: 16,
-        color: '#003e80',
-        lineHeight: 24,
+        fontSize: 18,
+        color: '#004a99',
+        lineHeight: 28,
         marginBottom: 40,
         maxWidth: 400,
-        opacity: 0.8,
+        opacity: 1, // Removed opacity for better visibility with new color
         textAlign: 'right',
+        fontWeight: '500',
     },
     infoDescriptionMobile: {
         textAlign: 'center',
@@ -368,7 +369,7 @@ const styles = StyleSheet.create({
         color: '#003e80',
         fontSize: 14,
         fontWeight: '600',
-        opacity: 0.7,
+        opacity: 0.9,
     },
     contactValueContainer: {
         flexDirection: 'row',

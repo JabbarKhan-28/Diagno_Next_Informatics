@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
         textAlign: 'justify',
         marginBottom: 40,
         maxWidth: 1000,
-        fontWeight: '500', 
+        fontWeight: '500',
     },
     descriptionMobile: {
         fontSize: 16,

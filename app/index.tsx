@@ -317,9 +317,9 @@ const styles = StyleSheet.create({
     },
     highlightText: {
         color: '#007BFF',
-        textShadowColor: 'rgba(0, 123, 255, 0.5)',
+        textShadowColor: 'rgba(0, 123, 255, 0.3)',
         textShadowOffset: { width: 0, height: 0 },
-        textShadowRadius: 20,
+        textShadowRadius: 15,
     },
     heroSubtitle: {
         color: '#94a3b8', 
@@ -397,7 +397,7 @@ const styles = StyleSheet.create({
         gap: 10,
     },
     featureText: {
-        color: 'rgba(255, 255, 255, 0.5)',
+        color: 'rgba(255, 255, 255, 0.8)',
         fontSize: 15,
         fontWeight: '600',
         letterSpacing: 0.5,
@@ -455,7 +455,7 @@ const styles = StyleSheet.create({
     },
     androidHeroSubtitle: {
         fontSize: 16,
-        color: '#334155',
+        color: '#1E293B',
         lineHeight: 24,
         marginBottom: 30,
         fontFamily: 'sans-serif',

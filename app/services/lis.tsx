@@ -148,19 +148,16 @@ const styles = StyleSheet.create({
         textAlign: 'left',
     },
     description: {
-        fontSize: 16,
-        lineHeight: 26,
-        color: '#334155',
+        fontSize: 18,
+        lineHeight: 28,
+        color: '#004a99',
         textAlign: 'justify',
         marginBottom: 40,
         maxWidth: 1000,
-        ...Platform.select({
-             web: {
-             }
-        })
+        fontWeight: '500',
     },
     descriptionMobile: {
-        fontSize: 15,
+        fontSize: 16,
         textAlign: 'left',
         marginBottom: 30,
     },
