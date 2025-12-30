@@ -173,16 +173,16 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
     },
     imagesGridMobile: {
-        flexDirection: 'column',
         gap: 20,
-        alignItems: 'center',
     },
     imagePlaceholder: {
         ...Platform.select({
             web: {
                 width: '94%',
                 maxWidth: 320,
-                height: 260, 
+                height: 260,
+                marginLeft: 'auto',
+                marginRight: 'auto', 
             },
             default: {
                 width: '94%',

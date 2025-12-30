@@ -18,7 +18,7 @@ const DashboardServiceScreen = () => {
                 <NavBar />
 
                 <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-                    <View style={styles.contentContainer}>
+                    <View style={[styles.mainCard, isMobile && styles.mainCardMobile]}>
                         <Text style={[styles.title, isMobile && styles.titleMobile]}>
                             Custom Dashboard & Reporting Tools for Labs & Clinics
                         </Text>
@@ -126,10 +126,32 @@ const styles = StyleSheet.create({
         paddingVertical: 40,
         paddingHorizontal: 20,
     },
-    contentContainer: {
+    mainCard: {
+        borderRadius: 20,
+        padding: 40,
         maxWidth: 1200,
         width: '100%',
         alignItems: 'center',
+        ...Platform.select({
+            web: {
+                boxShadow: '0px 4px 10px rgba(0,0,0,0.1)',
+                backgroundColor: 'rgba(225, 248, 255, 0.5)', 
+                backdropFilter: 'blur(5px)',
+            },
+            default: {
+                shadowColor: "#000",
+                shadowOffset: { width: 0, height: 4 },
+                shadowOpacity: 0.1,
+                shadowRadius: 10,
+                backgroundColor: 'rgba(225, 248, 255, 0.9)', 
+            }
+        }),
+        elevation: Platform.OS === 'android' ? 8 : 5,
+        borderWidth: 1,
+        borderColor: 'rgba(255, 255, 255, 0.5)',
+    },
+    mainCardMobile: {
+        padding: 24,
     },
     title: {
         fontSize: 32,
@@ -166,16 +188,16 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
     },
     imagesGridMobile: {
-        flexDirection: 'column',
         gap: 20,
-        alignItems: 'center',
     },
     imagePlaceholder: {
         ...Platform.select({
             web: {
                 width: '94%',
                 maxWidth: 320,
-                height: 260, 
+                height: 260,
+                marginLeft: 'auto',
+                marginRight: 'auto', 
             },
             default: {
                 width: '94%',
