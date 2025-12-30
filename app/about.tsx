@@ -11,6 +11,60 @@ export default function AboutScreen() {
     const { width } = useWindowDimensions();
     const isMobile = width < 768;
 
+    const ProfileSection = (
+        <View style={[styles.profileSection, isMobile && styles.profileSectionMobile]}>
+            <View style={styles.avatarContainer}>
+                <LinearGradient
+                    colors={['#b3e5fc', '#e1f5fe']}
+                    style={styles.avatar}
+                >
+                        <Text style={{fontSize: 50}}>👤</Text>
+                </LinearGradient>
+            </View>
+            <Text style={styles.profileName}>Dr Hina Ahsan</Text>
+            <Text style={styles.profileRole}>CEO Next Diagno Informatics</Text>
+        </View>
+    );
+
+    const TextSection = (
+        <View style={[styles.textContent, isMobile && styles.textContentMobile]}>
+            <Text style={styles.pageTitle}>About Us</Text>
+            
+            <Text style={styles.sectionTitle}>CEO's Message</Text>
+            
+            <Text style={[styles.paragraph, isMobile && styles.paragraphMobile]}>
+                At Diagno Next Informatics, our vision is clear: to be a catalyst in revolutionizing 
+                healthcare by transforming how clinical laboratories operate, innovate, and deliver 
+                results. We are committed to empowering clinical labs with advanced data 
+                Intelligence and Informatics solutions, ensuring they are equipped to meet the 
+                evolving demands of modern medicine with speed, accuracy, and efficiency.
+            </Text>
+
+            <Text style={[styles.paragraph, isMobile && styles.paragraphMobile]}>
+                The future of diagnostics lies in digital transformation, and we are proud to stand at 
+                the forefront of this shift. Through intelligent systems, streamlined workflows, and 
+                robust IT support, Diagno Next Informatics is enabling laboratories to transition 
+                seamlessly from traditional processes to digitally or locally driven, integrated ecosystems. Our 
+                solutions are designed not just to enhance operational performance, but to elevate 
+                the role of diagnostics in shaping better healthcare decisions and improving patient 
+                outcomes.
+            </Text>
+
+            <Text style={[styles.paragraph, isMobile && styles.paragraphMobile]}>
+                Our tagline, <Text style={styles.boldText}>“Revolutionizing Healthcare, Empowering Clinical Labs with Data 
+                Intelligence & Informatics Solutions,”</Text> embodies our core mission to deliver 
+                innovation that matters.
+            </Text>
+
+            <Text style={[styles.paragraph, isMobile && styles.paragraphMobile]}>
+                As CEO, I am deeply proud of the passion and expertise of our team, whose relentless 
+                pursuit of excellence drives every solution we create. Together with our partners and 
+                clients, we are powering the future of clinical lab IT: forging a smarter, more 
+                connected, and patient-focused healthcare landscape.
+            </Text>
+        </View>
+    );
+
     return (
         <View style={styles.container}>
             <Stack.Screen options={{ headerShown: false }} />
@@ -19,68 +73,28 @@ export default function AboutScreen() {
 
                 <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
                     <View style={[styles.mainCard, isMobile && styles.mainCardMobile]}>
-                        
-                        <View style={[styles.textContent, isMobile && styles.textContentMobile]}>
-                            <Text style={styles.pageTitle}>About Us</Text>
-                            
-                            <Text style={styles.sectionTitle}>CEO's Message</Text>
-                            
-                            <Text style={[styles.paragraph, isMobile && styles.paragraphMobile]}>
-                                At Diagno Next Informatics, our vision is clear: to be a catalyst in revolutionizing 
-                                healthcare by transforming how clinical laboratories operate, innovate, and deliver 
-                                results. We are committed to empowering clinical labs with advanced data 
-                                Intelligence and Informatics solutions, ensuring they are equipped to meet the 
-                                evolving demands of modern medicine with speed, accuracy, and efficiency.
-                            </Text>
-
-                            <Text style={[styles.paragraph, isMobile && styles.paragraphMobile]}>
-                                The future of diagnostics lies in digital transformation, and we are proud to stand at 
-                                the forefront of this shift. Through intelligent systems, streamlined workflows, and 
-                                robust IT support, Diagno Next Informatics is enabling laboratories to transition 
-                                seamlessly from traditional processes to digitally or locally driven, integrated ecosystems. Our 
-                                solutions are designed not just to enhance operational performance, but to elevate 
-                                the role of diagnostics in shaping better healthcare decisions and improving patient 
-                                outcomes.
-                            </Text>
-
-                            <Text style={[styles.paragraph, isMobile && styles.paragraphMobile]}>
-                                Our tagline, <Text style={styles.boldText}>“Revolutionizing Healthcare, Empowering Clinical Labs with Data 
-                                Intelligence & Informatics Solutions,”</Text> embodies our core mission to deliver 
-                                innovation that matters.
-                            </Text>
-
-                            <Text style={[styles.paragraph, isMobile && styles.paragraphMobile]}>
-                                As CEO, I am deeply proud of the passion and expertise of our team, whose relentless 
-                                pursuit of excellence drives every solution we create. Together with our partners and 
-                                clients, we are powering the future of clinical lab IT: forging a smarter, more 
-                                connected, and patient-focused healthcare landscape.
-                            </Text>
-                        </View>
-
-                        <View style={[styles.profileSection, isMobile && styles.profileSectionMobile]}>
-                            <View style={styles.avatarContainer}>
-                                <LinearGradient
-                                    colors={['#b3e5fc', '#e1f5fe']}
-                                    style={styles.avatar}
-                                >
-                                     <Text style={{fontSize: 50}}>👤</Text>
-                                </LinearGradient>
-                            </View>
-                            <Text style={styles.profileName}>Dr Hina Ahsan</Text>
-                            <Text style={styles.profileRole}>CEO Next Diagno Informatics</Text>
-                        </View>
-
+                        {isMobile ? (
+                            <>
+                                {ProfileSection}
+                                {TextSection}
+                            </>
+                        ) : (
+                            <>
+                                {TextSection}
+                                {ProfileSection}
+                            </>
+                        )}
                     </View>
                 </ScrollView>
             </SafeAreaView>
             
             <View style={styles.backgroundLayer} />
-             <Image 
+                <Image 
                 source={require('../assets/images/ui/about_bg.png')} 
                 style={styles.backgroundImage}
                 contentFit="cover"
-             />
-             <View style={styles.blueOverlay} />
+                />
+                <View style={styles.blueOverlay} />
         </View>
     );
 }
@@ -154,7 +168,7 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
     },
     mainCardMobile: {
-        flexDirection: 'column-reverse',
+        flexDirection: 'column',
         padding: 24,
     },
     textContent: {
@@ -164,7 +178,8 @@ const styles = StyleSheet.create({
     textContentMobile: {
         paddingRight: 0,
         marginBottom: 0, 
-        flex: 0,
+        flexGrow: 0,
+        flexBasis: 'auto',
     },
     profileSection: {
         flex: 1,
@@ -179,7 +194,8 @@ const styles = StyleSheet.create({
         marginBottom: 30,
         width: '100%',
         alignItems: 'center',
-        flex: 0,
+        flexGrow: 0,
+        flexBasis: 'auto',
     },
     pageTitle: {
         fontSize: 36,
