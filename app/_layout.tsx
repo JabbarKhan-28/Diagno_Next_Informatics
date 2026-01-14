@@ -3,6 +3,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Stack, usePathname, useRouter } from 'expo-router';
 import React, { useMemo } from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Analytics } from '@vercel/analytics/react';
 
 const SERVICES = [
   '/services/lis',
@@ -96,6 +97,7 @@ export default function RootLayout() {
   return (
     <>
       <Stack screenOptions={{ headerShown: false }} />
+      <Analytics />
       <NavigationControls />
     </>
   );
